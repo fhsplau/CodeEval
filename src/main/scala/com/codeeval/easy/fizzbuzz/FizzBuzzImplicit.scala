@@ -20,6 +20,5 @@ class FizzImplicit(input: List[Int]) {
 }
 
 object FizzBuzzImplicit {
-
   implicit def implicitConvert(input: List[Int]): FizzImplicit = new FizzImplicit(input)
 }

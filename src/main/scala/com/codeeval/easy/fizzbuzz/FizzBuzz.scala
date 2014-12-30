@@ -11,10 +11,8 @@ class FizzBuzz {
 
     def matcher(numberToMatch: Int, first: Int, second: Int): String = {
       numberToMatch match {
-        case x if x % first == 0 && x % second != 0 => "F"
-        case x if x % first != 0 && x % second == 0 => "B"
-        case x if x % first == 0 && x % second == 0 => "FB"
-        case _ => numberToMatch.toString
+        case x if x % first == 0 => if(x % second == 0) "FB" else "F"
+        case x if x % first != 0 => if(x % second == 0) "B" else numberToMatch.toString
       }
     }
 

@@ -1,10 +1,12 @@
 package com.codeeval.easy.fizzbuzz
 
+import scala.collection.mutable.ListBuffer
+
 class FizzImplicit(input: List[Int]) {
   def convert: List[String] = {
-    def convertImpl(range: List[Int], acc: List[String]): List[String] =
+    def convertImpl(range: List[Int], acc: ListBuffer[String]): ListBuffer[String] =
       if (range.isEmpty) acc
-      else convertImpl(range.tail, acc ::: List(matcher(range.head)))
+      else convertImpl(range.tail, acc += matcher(range.head))
 
     def matcher(numberToMatch: Int): String = {
       numberToMatch match {
@@ -13,7 +15,7 @@ class FizzImplicit(input: List[Int]) {
       }
     }
 
-    convertImpl(List.range(1, input(2) + 1), List())
+    convertImpl(List.range(1, input(2) + 1), new ListBuffer()).toList
   }
 }
 

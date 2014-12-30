@@ -1,8 +1,5 @@
 package com.codeeval.easy.fizzbuzz
 
-/**
- * Created by paverell on 29.12.14.
- */
 class FizzBuzz {
   def convert(input: List[Int]): List[String] = {
     def convertImpl(range: List[Int], acc: List[String]): List[String] =

@@ -2,9 +2,11 @@ package com.codeeval.easy.fizzbuzz
 
 class FizzBuzzMap(divByFirst: String, divBySecond: String, divByBoth: String) {
 
-  def this() = this("F","B","FB")
-  def this(divByFirst: String) = this(divByFirst,"B","FB")
-  def this(divByFirst: String, divBySecond:String) = this(divByFirst,divBySecond,"FB")
+  def this() = this("F", "B", "FB")
+
+  def this(divByFirst: String) = this(divByFirst, "B", "FB")
+
+  def this(divByFirst: String, divBySecond: String) = this(divByFirst, divBySecond, "FB")
 
   def convert(inputList: List[Int]): List[String] =
     if (inputList.size > 3) throw new Exception

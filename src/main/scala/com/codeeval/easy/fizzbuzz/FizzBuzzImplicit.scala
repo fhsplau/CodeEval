@@ -17,7 +17,7 @@ class FizzImplicit(input: List[Int]) extends FizzAbstract(input) {
     if (range.isEmpty) acc
     else convertImpl(range.tail, acc += matcher(range.head))
 
-  def matcher(numberToMatch: Int): String = {
+  private def matcher(numberToMatch: Int): String = {
     numberToMatch match {
       case x if x % input(0) == 0 => if (x % input(1) == 0) "FB" else "F"
       case x if x % input(0) != 0 => if (x % input(1) == 0) "B" else x.toString

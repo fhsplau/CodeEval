@@ -13,7 +13,7 @@ class FizzBuzzTest extends FunSuite with BeforeAndAfter{
     f = new FizzBuzz
   }
 
-  test("only F and B") {
+  test("F and B") {
     assert(f.convert(List(3,5,10)) === List("1", "2", "F", "4", "B", "F", "7", "8", "F", "B"))
   }
 

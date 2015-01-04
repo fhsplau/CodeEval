@@ -13,10 +13,12 @@ class ReverseWordsTest extends FunSuite with BeforeAndAfter{
   }
 
   test("proper string after reverse operation") {
-    assert(r.reverseWords("Hello World") === "World Hello")
+    assert(r.reverse("Hello World") === "World Hello")
+    assert(r.reverse2("Hello World") === "World Hello")
   }
 
   test("the same sentence if only one word") {
-    assert(r.reverseWords("Hello") === "Hello")
+    assert(r.reverse("Hello") === "Hello")
+    assert(r.reverse2("Hello") === "Hello")
   }
 }

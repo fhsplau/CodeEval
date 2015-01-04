@@ -21,9 +21,15 @@ class FizzBuzzMapTest extends FunSuite with BeforeAndAfter{
     assert(f.convert(List(3,3,10)) === List("1", "2", "FB", "4", "5", "FB", "7", "8", "FB", "10"))
   }
 
-  test("exception if input list's size is bigger than 3") {
+  test("exception if input list's size is different than 3") {
     intercept[Exception] {
       f.convert(List(1,2,3,10))
+    }
+    intercept[Exception] {
+      f.convert(List(1,2))
+    }
+    intercept[Exception] {
+      f.convert(List())
     }
   }
 

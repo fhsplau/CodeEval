@@ -1,7 +1,7 @@
 package com.codeeval.easy.sumOfPrimes
 
-class SumOfPrimes {
-  val bound = 1000
+class SumOfPrimes(bound: Int) {
+  def this() = this(1000)
 
   def sumPrimes: BigInt = {
     def sumPrimesImpl(nextNumber: Int, acc: Int, sum: BigInt): BigInt = {

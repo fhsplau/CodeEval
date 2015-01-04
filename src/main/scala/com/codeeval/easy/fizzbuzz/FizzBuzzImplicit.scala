@@ -7,7 +7,7 @@ trait FizzTrait {
 }
 
 abstract class FizzAbstract(input: List[Int]) extends FizzTrait {
-  override def convert: List[String] = convertImpl(List.range(1, input(2) + 1), ListBuffer()).toList
+  def convert: List[String] = convertImpl(List.range(1, input(2) + 1), ListBuffer()).toList
 
   def convertImpl(range: List[Int], acc: ListBuffer[String]): ListBuffer[String]
 }

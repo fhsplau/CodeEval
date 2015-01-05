@@ -7,7 +7,9 @@ class Multiples {
       else multiplyImpl(next, prev + next)
     }
 
-    multiplyImpl(n, 2 * n)
+    def isPowerOfTwo(number: Int): Boolean = (number & (number - 1)) == 0
+
+    if (isPowerOfTwo(n)) multiplyImpl(n, 2 * n) else throw new Exception
   }
 
 }

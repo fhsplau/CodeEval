@@ -20,4 +20,10 @@ class MultiplesTest extends FunSuite with BeforeAndAfter{
     assert(m.multiply(100,8) === 104)
   }
 
+  test("exception if n is not a power of 2") {
+    intercept[Exception] {
+      m.multiply(100,7)
+    }
+  }
+
 }

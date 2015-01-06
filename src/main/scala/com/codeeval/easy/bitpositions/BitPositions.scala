@@ -5,5 +5,5 @@ object BitPositions {
 
   def int(n: Int): BitInt = (p: Int) => (n & 1 << p) == (1 << p)
 
-  implicit def bitsAreOn(n: BitInt, p1: Int, p2: Int): Boolean = n(p1) && n(p2)
+  def bitsAreOn(n: BitInt, p1: Int, p2: Int): Boolean = n(p1) && n(p2)
 }

@@ -14,6 +14,6 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter{
   }
 
   test("bit 1 and 2 are off in 125"){
-    assert(bitsAreOn(int(125),1,2))
+    assert(!bitsAreOn(int(125),1,2))
   }
 }

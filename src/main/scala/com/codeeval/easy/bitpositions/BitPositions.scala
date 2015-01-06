@@ -1,9 +1,12 @@
 package com.codeeval.easy.bitpositions
 
-object BitPositions {
-  type BitInt = Int => Boolean
+class Bits(n: Int) {
+  type Bit = Int => Boolean
+  
+  private def bit(n: Int): Bit = (p: Int) => (n & 1 << p) == (1 << p)
+  def areBitsOn(p1: Int, p2: Int): Boolean = bit(n)(p1) && bit(n)(p2)
+}
 
-  def int(n: Int): BitInt = (p: Int) => (n & 1 << p) == (1 << p)
-
-  def bitsAreOn(n: BitInt, p1: Int, p2: Int): Boolean = n(p1) && n(p2)
+object Bits {
+  implicit def bitsImpl(n: Int): Bits = new Bits(n)
 }

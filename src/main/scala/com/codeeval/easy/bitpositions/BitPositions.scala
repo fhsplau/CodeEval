@@ -5,7 +5,7 @@ class Bits(n: Int) {
 
   private def bit(n: Int): Bit = (p: Int) => (n & 1 << p) == (1 << p)
 
-  def areBitsOn(p1: Int, p2: Int): Boolean = bit(n)(p1) && bit(n)(p2)
+  def areBitsOn(p: Int*): Boolean = if (p.isEmpty) true else bit(n)(p.head) && areBitsOn(p.tail: _*)
 }
 
 object Bits {

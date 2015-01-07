@@ -13,6 +13,10 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter {
     assert(86.areBitsOn(2, 4))
   }
 
+  test("arbitrary number of arguments") {
+    assert(!86.areBitsOn(2, 4, 5, 6))
+  }
+
   test("bit 1 and 2 are off in 125") {
     assert(!125.areBitsOn(1, 2))
   }

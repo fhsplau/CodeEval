@@ -11,7 +11,7 @@ class Bits(n: Int) {
 
   def bitOn(p: Int): Int = if (isBitOn(p)) n else n | 1 << p
 
-  def bitOff(p: Int): Int = if (!isBitOn(p)) n else n | 1 << p
+  def bitOff(p: Int): Int = if (!isBitOn(p)) n else n ^ 1 << p
 
   def numOfBits: Int = {
     def numOfBitsImpl(num: Int, acc: Int): Int = if (num == 0) acc else numOfBitsImpl(num >> 1, acc + 1)

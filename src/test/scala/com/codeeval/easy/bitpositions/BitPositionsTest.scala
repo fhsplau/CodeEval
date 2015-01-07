@@ -33,8 +33,6 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter {
   }
 
   test("switch bit off"){
-    println(86.bitOn(0))
-    println(86.bitOn(0).bitOff(0))
     assert(86.bitOn(0).bitOff(0) === 86)
   }
 

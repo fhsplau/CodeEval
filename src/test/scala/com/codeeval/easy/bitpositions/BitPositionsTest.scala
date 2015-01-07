@@ -23,4 +23,31 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter {
   test("bit 1 and 2 are off in 125") {
     assert(!125.areBitsOn(1, 2))
   }
+
+  test("switch bit on"){
+    assert(86.bitOn(0) === 87)
+  }
+
+  test("try to switch bit when it's on") {
+    assert(86.bitOn(2) === 86)
+  }
+
+  test("switch bit off"){
+    println(86.bitOn(0))
+    println(86.bitOn(0).bitOff(0))
+    assert(86.bitOn(0).bitOff(0) === 86)
+  }
+
+  test("try to switch bit off when it's off"){
+    assert(86.bitOff(0) === 86)
+  }
+
+  test("number of bits"){
+    assert(4.numOfBits === 3)
+  }
+
+  test("convert"){
+    assert(4.convertToBin === "100")
+//    assert(5.convertToBin === "101")
+  }
 }

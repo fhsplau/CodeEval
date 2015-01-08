@@ -22,19 +22,14 @@ class Bin(n: Int) extends Bit(n) {
     numOfBitsImpl(n, 0)
   }
 
-  private def areBitsOnList(ps: List[Int]): List[Boolean] = {
-    def impl(l: List[Int], acc: List[Boolean]): List[Boolean] =
-      if (l.isEmpty) acc
-      else impl(l.tail, acc ::: List(isBitOn(l.head)))
-
-    impl(ps, List())
-  }
+  private def areBitsOnList(ps: List[Int]): List[Boolean] =
+    if(ps.nonEmpty) List(isBitOn(ps.head)):::areBitsOnList(ps.tail)
+    else List()
 
   def convertToBin: String = areBitsOnList(List.range(0, numOfBits)).reverse.map {
-      case true => "1"
-      case false => "0"
-    }.
-    mkString
+    case true => "1"
+    case false => "0"
+  }.mkString
 }
 
 object BinaryOperations {

@@ -1,17 +1,20 @@
 package com.codeeval.easy.bitpositions
 
-class Bin(n: Int) {
+abstract class Bit(n: Int) {
   type Bit = Int => Boolean
 
-  private def bit(n: Int): Bit = (p: Int) => (n & 1 << p) == (1 << p)
+  def bit(n: Int): Bit = (p: Int) => (n & 1 << p) == (1 << p)
 
   def isBitOn(p: Int): Boolean = bit(n)(p)
-
-  def areBitsOn(ps: Int*): Boolean = if (ps.isEmpty) true else isBitOn(ps.head) && areBitsOn(ps.tail: _*)
 
   def bitOn(p: Int): Int = if (isBitOn(p)) n else n | 1 << p
 
   def bitOff(p: Int): Int = if (!isBitOn(p)) n else n ^ 1 << p
+}
+
+class Bin(n: Int) extends Bit(n){
+
+  def areBitsOn(ps: Int*): Boolean = if (ps.isEmpty) true else isBitOn(ps.head) && areBitsOn(ps.tail: _*)
 
   def numOfBits: Int = {
     def numOfBitsImpl(num: Int, acc: Int): Int = if (num == 0) acc else numOfBitsImpl(num >> 1, acc + 1)

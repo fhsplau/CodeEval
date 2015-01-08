@@ -1,6 +1,6 @@
 package com.codeeval.easy.bitpositions
 
-class Bits(n: Int) {
+class Bin(n: Int) {
   type Bit = Int => Boolean
 
   private def bit(n: Int): Bit = (p: Int) => (n & 1 << p) == (1 << p)
@@ -28,6 +28,6 @@ class Bits(n: Int) {
   }
 }
 
-object Bits {
-  implicit def bitsImpl(n: Int): Bits = new Bits(n)
+object BinaryOperations {
+  implicit def bitsImpl(n: Int): Bin = new Bin(n)
 }

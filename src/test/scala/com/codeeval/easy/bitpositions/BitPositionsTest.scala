@@ -3,7 +3,7 @@ package com.codeeval.easy.bitpositions
 import org.junit.runner.RunWith
 import org.scalatest.{BeforeAndAfter, FunSuite}
 import org.scalatest.junit.JUnitRunner
-import com.codeeval.easy.bitpositions.Bits._
+import com.codeeval.easy.bitpositions.BinaryOperations._
 
 @RunWith(classOf[JUnitRunner])
 class BitPositionsTest extends FunSuite with BeforeAndAfter {

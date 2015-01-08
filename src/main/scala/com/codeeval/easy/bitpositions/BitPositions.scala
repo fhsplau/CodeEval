@@ -12,7 +12,7 @@ abstract class Bit(n: Int) {
   def bitOff(p: Int): Int = if (!isBitOn(p)) n else n ^ 1 << p
 }
 
-class Bin(n: Int) extends Bit(n){
+class Bin(n: Int) extends Bit(n) {
 
   def areBitsOn(ps: Int*): Boolean = if (ps.isEmpty) true else isBitOn(ps.head) && areBitsOn(ps.tail: _*)
 
@@ -22,14 +22,19 @@ class Bin(n: Int) extends Bit(n){
     numOfBitsImpl(n, 0)
   }
 
-  def convertToBin: String = {
+  private def areBitsOnList(ps: List[Int]): List[Boolean] = {
+    def impl(l: List[Int], acc: List[Boolean]): List[Boolean] =
+      if (l.isEmpty) acc
+      else impl(l.tail, acc ::: List(isBitOn(l.head)))
 
-    def convertImpl(num: Int, acc: String): String =
-      if (num == 0) acc
-      else convertImpl(num >> 1, acc + (if (bit(num)(0)) "1" else "0"))
-
-    convertImpl(n, "").reverse
+    impl(ps, List())
   }
+
+  def convertToBin: String = areBitsOnList(List.range(0, numOfBits)).reverse.map {
+      case true => "1"
+      case false => "0"
+    }.
+    mkString
 }
 
 object BinaryOperations {

@@ -8,9 +8,9 @@ import com.codeeval.easy.bitpositions.BinaryOperations._
 @RunWith(classOf[JUnitRunner])
 class BitPositionsTest extends FunSuite with BeforeAndAfter {
 
-//  ignore("check if bit is on"){
-//    assert(86.bit(2))
-//  }
+  test("check if bit is on"){
+    assert(86.bit(2).isOn)
+  }
 
   test("bit 2 and 3 are on in 86") {
     assert(86.areBitsOn(2, 4))

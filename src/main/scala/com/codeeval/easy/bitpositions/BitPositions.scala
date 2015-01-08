@@ -7,7 +7,7 @@ class Bits(n: Int) {
 
   def isBitOn(p: Int): Boolean = bit(n)(p)
 
-  def areBitsOn(p: Int*): Boolean = if (p.isEmpty) true else isBitOn(p.head) && areBitsOn(p.tail: _*)
+  def areBitsOn(ps: Int*): Boolean = if (ps.isEmpty) true else isBitOn(ps.head) && areBitsOn(ps.tail: _*)
 
   def bitOn(p: Int): Int = if (isBitOn(p)) n else n | 1 << p
 

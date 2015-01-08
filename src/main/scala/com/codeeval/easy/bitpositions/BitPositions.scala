@@ -20,9 +20,10 @@ class Bin(n: Int) {
   }
 
   def convertToBin: String = {
-    def convertImpl(num: Int, acc: String): String = 
+
+    def convertImpl(num: Int, acc: String): String =
       if (num == 0) acc
-      else convertImpl(num >> 1, acc + (if ((num & 1) != 0) "1" else "0"))
+      else convertImpl(num >> 1, acc + (if (bit(num)(0)) "1" else "0"))
 
     convertImpl(n, "").reverse
   }

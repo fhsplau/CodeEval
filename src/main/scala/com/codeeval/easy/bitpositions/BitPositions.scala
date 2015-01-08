@@ -27,15 +27,13 @@ class Bin(n: Int) extends Bit(n) {
     numOfBitsImpl(n, 0)
   }
 
-  private def areBitsOnList(ps: List[Int]): List[Boolean] = ???
+  def toBin: String = {
+    def areBitsOnList(ps: List[Int]): List[Bit] =
+      if(ps.isEmpty) List()
+      else List(bit(ps.head)):::areBitsOnList(ps.tail)
 
-  //    if (ps.nonEmpty) List(bit(ps.head)) ::: areBitsOnList(ps.tail)
-  //    else List()
-
-  def convertToBin: String = areBitsOnList(List.range(0, numOfBits)).reverse.map {
-    case true => "1"
-    case false => "0"
-  }.mkString
+    areBitsOnList(List.range(0, numOfBits)).map(_()).reverse.mkString
+  }
 
 }
 

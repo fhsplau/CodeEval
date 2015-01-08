@@ -3,6 +3,8 @@ package com.codeeval.easy.bitpositions
 abstract class Bit(n: Int) {
   type Bit = Int => Boolean
 
+  def areBitsOn(ps: Int*): Boolean
+
   def bit(n: Int): Bit = (p: Int) => (n & 1 << p) == (1 << p)
 
   def isBitOn(p: Int): Boolean = bit(n)(p)
@@ -23,7 +25,7 @@ class Bin(n: Int) extends Bit(n) {
   }
 
   private def areBitsOnList(ps: List[Int]): List[Boolean] =
-    if(ps.nonEmpty) List(isBitOn(ps.head)):::areBitsOnList(ps.tail)
+    if (ps.nonEmpty) List(isBitOn(ps.head)) ::: areBitsOnList(ps.tail)
     else List()
 
   def convertToBin: String = areBitsOnList(List.range(0, numOfBits)).reverse.map {

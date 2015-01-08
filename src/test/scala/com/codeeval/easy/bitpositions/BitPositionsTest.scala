@@ -46,6 +46,6 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter {
 
   test("convert"){
     assert(4.convertToBin === "100")
-//    assert(5.convertToBin === "101")
+    assert(5.convertToBin === "101")
   }
 }

@@ -8,11 +8,11 @@ import com.codeeval.easy.bitpositions.BinaryOperations._
 @RunWith(classOf[JUnitRunner])
 class BitPositionsTest extends FunSuite with BeforeAndAfter {
 
-  test("check if bit is on"){
+  test("check if bit is on") {
     assert(86.isOn(2))
   }
 
-  test("check if bit is off"){
+  test("check if bit is off") {
     assert(86.isOff(0))
   }
 
@@ -28,7 +28,7 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter {
     assert(!125.areOn(1, 2))
   }
 
-  test("switch bit on"){
+  test("switch bit on") {
     assert(86.bitOn(0) === 87)
   }
 
@@ -36,21 +36,21 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter {
     assert(86.bitOn(2) === 86)
   }
 
-  test("switch bit off"){
+  test("switch bit off") {
     assert(86.bitOn(0).bitOff(0) === 86)
   }
 
-  test("try to switch bit off when it's off"){
+  test("try to switch bit off when it's off") {
     assert(86.bitOff(0) === 86)
   }
 
-  test("number of bits"){
+  test("number of bits") {
     assert(4.numOfBits === 3)
   }
 
-  test("convert"){
-    println(4.bit(1))
+  test("convert") {
     assert(4.toBin === "100")
     assert(5.toBin === "101")
+    assert(4.bitOn(0).toBin === "101")
   }
 }

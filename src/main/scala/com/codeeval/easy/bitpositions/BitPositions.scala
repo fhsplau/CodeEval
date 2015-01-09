@@ -16,15 +16,15 @@ trait BitLogic extends Bit {
   def areOn(ps: Int*): Boolean = if (ps.isEmpty) true else (b(ps.head) == 1) && areOn(ps.tail: _*)
 }
 
-abstract class BitOperations extends BitLogic {
+trait BitOperations extends Bit {
 
-  def bitOn(p: Int): Int = if (isOn(p)) n else n | 1 << p
+  def bitOn(p: Int): Int = if (b(p)==1) n else n | 1 << p
 
-  def bitOff(p: Int): Int = if (isOff(p)) n else n ^ 1 << p
+  def bitOff(p: Int): Int = if (b(p)!=1) n else n ^ 1 << p
 
 }
 
-class Bin(number: Int) extends BitOperations {
+class Bin(number: Int) extends BitOperations with BitLogic {
   val bit: Bit = b
   override protected val n: Int = number
 

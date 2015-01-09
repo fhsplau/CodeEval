@@ -18,9 +18,13 @@ trait BitLogic extends Bit {
 
 trait BitOperations extends Bit {
 
-  def bitOn(p: Int): Int = if (b(p) == 1) n else n | 1 << p
+  def isOn(p: Int): Boolean
 
-  def bitOff(p: Int): Int = if (b(p) != 1) n else n ^ 1 << p
+  def isOff(p: Int): Boolean
+
+  def bitOn(p: Int): Int = if (isOn(p)) n else n | 1 << p
+
+  def bitOff(p: Int): Int = if (isOff(p)) n else n ^ 1 << p
 
   def shiftLeft(np: Int) = n >> np
 

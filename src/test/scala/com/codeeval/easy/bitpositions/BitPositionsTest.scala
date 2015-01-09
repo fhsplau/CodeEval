@@ -9,7 +9,7 @@ import com.codeeval.easy.bitpositions.BinaryOperations._
 class BitPositionsTest extends FunSuite with BeforeAndAfter {
 
   test("check if bit is on") {
-    assert(86.isOn(2))
+    assert(86.bit(2).isOn(2))
   }
 
   test("check if bit is off") {

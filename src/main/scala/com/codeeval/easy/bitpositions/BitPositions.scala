@@ -35,13 +35,7 @@ class Bin(number: Int) extends BitOperations {
     numOfBitsImpl(n, 0)
   }
 
-  def toBin: String = {
-    def areBitsOnList(ps: List[Int]): List[Int] =
-      if (ps.isEmpty) List()
-      else List(bit(ps.head)) ::: areBitsOnList(ps.tail)
-
-    areBitsOnList(List.range(0, numOfBits)).reverse.mkString
-  }
+  def toBin: String = List.range(0, numOfBits).map(bit).reverse.mkString
 }
 
 object BinaryOperations {

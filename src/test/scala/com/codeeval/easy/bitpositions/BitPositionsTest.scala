@@ -12,6 +12,10 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter {
     assert(86.bit(2).isOn)
   }
 
+  test("check if bit is off"){
+    assert(86.bit(0).isOff)
+  }
+
   test("bit 2 and 3 are on in 86") {
     assert(86.areBitsOn(2, 4))
   }

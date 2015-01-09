@@ -15,6 +15,8 @@ abstract class Bit(n: Int) {
 
 class BitLogic(b: () => Int) {
   def isOn: Boolean = b() == 1
+
+  def isOff: Boolean = !isOn
 }
 
 class Bin(n: Int) extends Bit(n) {
@@ -29,8 +31,8 @@ class Bin(n: Int) extends Bit(n) {
 
   def toBin: String = {
     def areBitsOnList(ps: List[Int]): List[Bit] =
-      if(ps.isEmpty) List()
-      else List(bit(ps.head)):::areBitsOnList(ps.tail)
+      if (ps.isEmpty) List()
+      else List(bit(ps.head)) ::: areBitsOnList(ps.tail)
 
     areBitsOnList(List.range(0, numOfBits)).map(_()).reverse.mkString
   }

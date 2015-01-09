@@ -48,7 +48,7 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter {
     assert(4.numOfBits === 3)
   }
 
-  test("proper bit"){
+  test("proper bit") {
     assert(4.bit(0) === 0)
     assert(5.bit(0) === 1)
   }
@@ -59,8 +59,16 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter {
     assert(4.bitOn(0).toBin === "101")
   }
 
-  test("if proper value after shift Left"){
+  test("if proper value after shift Left") {
     assert(4.shiftLeft(1) === 2)
     assert(87.shiftLeft(4) === 5)
+    assert(0.shiftLeft(10) === 0)
   }
+
+  test("if proper value after shift right") {
+    assert(4.shiftRight(1) === 8)
+    assert(87.shiftRight(4) === 1392)
+    assert(0.shiftRight(10) === 0)
+  }
+
 }

@@ -20,9 +20,9 @@ abstract class BitOperations extends BitLogic {
 
   val bit: Bit = b
 
-  def bitOn(p: Int): Int = if (bit(p) == 1) n else n | 1 << p
+  def bitOn(p: Int): Int = if (isOn(p)) n else n | 1 << p
 
-  def bitOff(p: Int): Int = if (bit(p) != 1) n else n ^ 1 << p
+  def bitOff(p: Int): Int = if (isOff(p)) n else n ^ 1 << p
 }
 
 

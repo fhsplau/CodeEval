@@ -58,4 +58,9 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter {
     assert(5.toBin === "101")
     assert(4.bitOn(0).toBin === "101")
   }
+
+  test("if proper value after shift Left"){
+    assert(4.shiftLeft(1) === 2)
+    assert(87.shiftLeft(4) === 5)
+  }
 }

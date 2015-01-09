@@ -22,6 +22,8 @@ trait BitOperations extends Bit {
 
   def bitOff(p: Int): Int = if (b(p) != 1) n else n ^ 1 << p
 
+  def shiftLeft(np: Int) = n >> np
+
 }
 
 class Bin(number: Int) extends BitOperations with BitLogic {

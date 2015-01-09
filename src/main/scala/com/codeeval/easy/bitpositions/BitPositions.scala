@@ -25,8 +25,8 @@ trait BitOperations extends Bit {
 }
 
 class Bin(number: Int) extends BitOperations with BitLogic {
-  val bit: Bit = b
   override protected val n: Int = number
+  val bit: Bit = b
 
   def numOfBits: Int = {
     def numOfBitsImpl(num: Int, acc: Int): Int = if (num == 0) acc else numOfBitsImpl(num >> 1, acc + 1)

@@ -48,6 +48,11 @@ class BitPositionsTest extends FunSuite with BeforeAndAfter {
     assert(4.numOfBits === 3)
   }
 
+  test("proper bit"){
+    assert(4.bit(0) === 0)
+    assert(5.bit(0) === 1)
+  }
+
   test("convert") {
     assert(4.toBin === "100")
     assert(5.toBin === "101")

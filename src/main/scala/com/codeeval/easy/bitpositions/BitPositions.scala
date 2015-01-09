@@ -1,10 +1,10 @@
 package com.codeeval.easy.bitpositions
 
 trait Bit {
-  type bit = (Int) => Int
+  type Bit = (Int) => Int
 
-  val n: Int
-  val b: bit = (p: Int) => if ((n & 1 << p) == (1 << p)) 1 else 0
+  protected val n: Int
+  protected val b: Bit = (p: Int) => if ((n & 1 << p) == (1 << p)) 1 else 0
 }
 
 trait BitLogic extends Bit {
@@ -12,13 +12,13 @@ trait BitLogic extends Bit {
   def isOn(p: Int): Boolean = b(p) == 1
 
   def isOff(p: Int): Boolean = !isOn(p)
-  
+
   def areOn(ps: Int*): Boolean = if (ps.isEmpty) true else (b(ps.head) == 1) && areOn(ps.tail: _*)
 }
 
 abstract class BitOperations extends BitLogic {
-  
-  val bit: bit = b
+
+  val bit: Bit = b
 
   def bitOn(p: Int): Int = if (bit(p) == 1) n else n | 1 << p
 
@@ -27,7 +27,7 @@ abstract class BitOperations extends BitLogic {
 
 
 class Bin(number: Int) extends BitOperations {
-  override val n: Int = number
+  override protected val n: Int = number
 
   def numOfBits: Int = {
     def numOfBitsImpl(num: Int, acc: Int): Int = if (num == 0) acc else numOfBitsImpl(num >> 1, acc + 1)

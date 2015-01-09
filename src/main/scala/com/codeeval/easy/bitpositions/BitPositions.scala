@@ -4,7 +4,7 @@ trait Bit {
   type Bit = (Int) => Int
 
   protected val n: Int
-  protected val b: Bit = (p: Int) => if ((n & 1 << p) == (1 << p)) 1 else 0
+  protected val b: Bit = (p: Int) => if (((n >> p) & 1) == 1) 1 else 0
 }
 
 trait BitLogic extends Bit {
@@ -18,9 +18,9 @@ trait BitLogic extends Bit {
 
 trait BitOperations extends Bit {
 
-  def bitOn(p: Int): Int = if (b(p)==1) n else n | 1 << p
+  def bitOn(p: Int): Int = if (b(p) == 1) n else n | 1 << p
 
-  def bitOff(p: Int): Int = if (b(p)!=1) n else n ^ 1 << p
+  def bitOff(p: Int): Int = if (b(p) != 1) n else n ^ 1 << p
 
 }
 

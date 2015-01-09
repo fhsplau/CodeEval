@@ -18,15 +18,14 @@ trait BitLogic extends Bit {
 
 abstract class BitOperations extends BitLogic {
 
-  val bit: Bit = b
-
   def bitOn(p: Int): Int = if (isOn(p)) n else n | 1 << p
 
   def bitOff(p: Int): Int = if (isOff(p)) n else n ^ 1 << p
+
 }
 
-
 class Bin(number: Int) extends BitOperations {
+  val bit: Bit = b
   override protected val n: Int = number
 
   def numOfBits: Int = {

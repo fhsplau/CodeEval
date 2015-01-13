@@ -11,7 +11,7 @@ object FibonacciSeries {
       fibImpl(v + 1)
     }
 
-    fibImpl(2)
+    if (n == 0 || n == 1) fibDict(n) else fibImpl(2)
   }
 
 }

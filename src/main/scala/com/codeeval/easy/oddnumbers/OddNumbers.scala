@@ -9,5 +9,15 @@ class Numbers(n: Int) {
 object OddNumbers {
   implicit def numbers(n: Int): Numbers = new Numbers(n)
 
-  def oddNumbers: List[Int] = (1 to 100).filter(x=> x.isOdd).toList
+  def oddNumbers: List[Int] = (1 to 100).filter(x => x.isOdd).toList
+
+  def oddNumbers2: List[Int] = {
+    var bound = 99
+
+    def impl(next: Int, acc: List[Int]): List[Int] =
+      if (next > bound) acc
+      else impl(next + 1, if (next.isOdd) acc ::: List(next) else acc)
+
+    impl(1, List())
+  }
 }

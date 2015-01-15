@@ -8,4 +8,6 @@ class Numbers(n: Int) {
 
 object OddNumbers {
   implicit def numbers(n: Int): Numbers = new Numbers(n)
+
+  def oddNumbers: List[Int] = (1 to 100).filter(x=> x.isOdd).toList
 }

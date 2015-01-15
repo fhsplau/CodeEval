@@ -12,7 +12,7 @@ object OddNumbers {
   def oddNumbers: List[Int] = (1 to 100).filter(x => x.isOdd).toList
 
   def oddNumbers2: List[Int] = {
-    var bound = 99
+    val bound = 99
 
     def impl(next: Int, acc: List[Int]): List[Int] =
       if (next > bound) acc

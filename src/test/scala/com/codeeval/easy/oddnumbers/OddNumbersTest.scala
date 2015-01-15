@@ -28,4 +28,8 @@ class OddNumbersTest extends FunSuite {
   test("odd numbers from 1 to 99 v2.0") {
     assert(oddNumbers2 === oddNumbersFromOneTo99)
   }
+
+  test("odd numbers from 1 to 99 v2.1") {
+    assert(oddNumbers3 === oddNumbersFromOneTo99)
+  }
 }

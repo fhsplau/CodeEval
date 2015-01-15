@@ -20,4 +20,6 @@ object OddNumbers {
 
     impl(1, List())
   }
+
+  def oddNumbers3: List[Int] = (1 to 100).par.filter(_.isOdd).toList
 }

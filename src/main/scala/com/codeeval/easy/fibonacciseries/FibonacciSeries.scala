@@ -7,10 +7,10 @@ object FibonacciSeries {
   var fibDict = scala.collection.mutable.Map(0 -> 0, 1 -> 1)
 
   def fib: Fib = { (n: Int) =>
-    def fImpl(v: Int): Int = getFib(v) match {
+    def f(v: Int): Int = getFib(v) match {
       case Some(i) => i
       case None =>
-        fibDict += (v -> (fImpl(v - 1) + fImpl(v - 2)))
+        fibDict += (v -> (f(v - 1) + f(v - 2)))
         fibDict(v)
     }
 
@@ -22,6 +22,6 @@ object FibonacciSeries {
       }
     }
 
-    fImpl(n)
+    f(n)
   }
 }

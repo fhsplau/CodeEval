@@ -15,6 +15,7 @@ class FibonacciSeriesTest extends FunSuite {
     assert(fib(1) === 1)
     assert(fib(2) === 1)
     assert(fib(13) === 233)
+    assert((fib(1)+fib(12)) === 145)
   }
 
 }
